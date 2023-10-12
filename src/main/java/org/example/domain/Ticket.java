@@ -1,6 +1,6 @@
 package org.example.domain;
 
-import org.example.domain.enums.Type;
+import org.example.domain.enums.TicketType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,12 +15,12 @@ public class Ticket {
     private Long id;
     private double price;
     private int quantity;
-    private Type type;
+    private TicketType ticketType;
 
-    public Ticket(double price, int quantity, Type type) {
+    public Ticket(double price, int quantity, TicketType ticketType) {
         this.price = price;
         this.quantity = quantity;
-        this.type = type;
+        this.ticketType = ticketType;
     }
 
     public Ticket() {
@@ -50,12 +50,12 @@ public class Ticket {
         this.quantity = quantity;
     }
 
-    public Type getType() {
-        return type;
+    public TicketType getTicketType() {
+        return ticketType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setTicketType(TicketType ticketType) {
+        this.ticketType = ticketType;
     }
 
     @Override
@@ -63,12 +63,12 @@ public class Ticket {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
-        return Double.compare(ticket.price, price) == 0 && quantity == ticket.quantity && Objects.equals(id, ticket.id) && type == ticket.type;
+        return Double.compare(ticket.price, price) == 0 && quantity == ticket.quantity && Objects.equals(id, ticket.id) && ticketType == ticket.ticketType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, price, quantity, type);
+        return Objects.hash(id, price, quantity, ticketType);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class Ticket {
                 "id=" + id +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", type=" + type +
+                ", ticketType=" + ticketType +
                 '}';
     }
 }

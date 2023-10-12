@@ -1,5 +1,5 @@
 package org.example.domain.enums;
 
-public enum Type {
+public enum TicketType {
     STANDARD,VIP
 }
