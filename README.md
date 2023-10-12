@@ -32,13 +32,15 @@ MySQL Connector/J : com.mysql:mysql-connector-j:8.1.0
 
 Configuration Hibernate
 
-hibernate.dialect=hibernate.hbm2ddl.auto
+jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver
 
-hibernate.connection.url=jdbc:mysql://localhost:3306/gathergrid
+jakarta.persistence.jdbc.url=jdbc:mysql://localhost:3306/gathergrid
 
-hibernate.connection.username=root
+jakarta.persistence.jdbc.user=root
 
-hibernate.connection.password=(pas de password)
+jakarta.persistence.jdbc.password=
+
+hibernate.hbm2ddl.auto=update
 
 
 ### Instructions pour le Déploiement :
