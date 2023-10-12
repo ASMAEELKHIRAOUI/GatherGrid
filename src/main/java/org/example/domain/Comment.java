@@ -2,6 +2,8 @@ package org.example.domain;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 public class Comment {
     @Id
@@ -75,4 +77,16 @@ public class Comment {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Comment comment = (Comment) o;
+        return Objects.equals(id, comment.id) && Objects.equals(text, comment.text) && Objects.equals(review, comment.review) && Objects.equals(user, comment.user) && Objects.equals(event, comment.event);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, text, review, user, event);
+    }
 }

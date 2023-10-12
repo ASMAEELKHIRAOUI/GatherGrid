@@ -1,12 +1,13 @@
 package org.example.service;
 
 import org.example.domain.Event;
-
-import java.util.List;
-import java.util.stream.Collectors;
+import org.example.repository.EventRepository;
 
 public class EventService {
 
+    private final EventRepository eventRepository;
 
-
+    public EventService() {
+        eventRepository = new EventRepository();
+    }
 }
